@@ -10,7 +10,7 @@ get('admin', function () {
     return redirect('/admin/post');
 });
 $router->group([
-    'namespace' => 'Administrator',
+    'namespace' => 'Admin',
     'middleware' => 'auth',
 ], function () {
     resource('admin/post', 'PostController');
