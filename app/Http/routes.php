@@ -1,19 +1,18 @@
 <?php
 // Blog pages
 get('/', function () {
-    return redirect('/blog');
+    return view('welcome');
 });
-get('blog', 'BlogController@index');
-get('blog/{slug}', 'BlogController@showPost');
-// Admin area
+
+ //Admin area
 get('admin', function () {
-    return redirect('/admin/post');
+    return redirect('/auth/login');
 });
 $router->group([
     'namespace' => 'Admin',
     'middleware' => 'auth',
 ], function () {
-    resource('admin/post', 'PostController');
+
 });
 // Logging in and out
 get('/auth/login', 'Auth\AuthController@getLogin');

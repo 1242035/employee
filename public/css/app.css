@@ -8299,3 +8299,7 @@ button.close {
     display: none !important;
   }
 }
+
+h1.blog-title {
+  padding-top: 60px;
+}

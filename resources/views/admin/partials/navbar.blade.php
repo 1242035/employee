@@ -1,8 +1,8 @@
 <ul class="nav navbar-nav">
     <li><a href="/">Blog Home</a></li>
     @if (Auth::check())
-        <li @if (Request::is('admin/post*')) class="active" @endif>
-            <a href="/admin/post">Posts</a>
+        <li @if (Request::is('admin/Department*')) class="active" @endif>
+            <a href="/admin/departments">Departments</a>
         </li>
     @endif
 </ul>
@@ -16,6 +16,7 @@
         </a>
         <ul class="dropdown-menu" role="menu">
             <li><a href="/auth/logout">Logout</a></li>
+            <li><a href="/auth/adduser">Add Admin</a></li>
         </ul>
     </li>
   @endif

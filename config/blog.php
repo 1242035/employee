@@ -1,5 +1,6 @@
 <?php
 return [
-    'title' => 'My Simple Blog',
+    'name' => "Employee Directory",
+    'title' => 'Employee Directory',
     'posts_per_page' => 5
 ];
