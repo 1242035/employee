@@ -25,11 +25,13 @@ class UserController extends Controller
 
     public function postAdduser(AddAdminRequest $request, AppMailer $mailer)
     {
+        $random_password = bcrypt(str_random(8));
+
         $user = new User();
 
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = str_random(8);
+        $user->password = $random_password;
         $user->save();
 
         $mailer->sendEmailConfirmationTo($user);

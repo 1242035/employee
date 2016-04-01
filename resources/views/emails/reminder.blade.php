@@ -1,5 +1,5 @@
 <h3>Dear <em>{{$user->name}}</em>,</h3>
-<h4>Congratulations and welcome you to Employee Directory website!</h4> <br>
+<em>Congratulations and welcome you to Employee Directory website!</em> <br>
 You have been appointed as the administrator of our system.
 Now you can use these following information to login: <br/>
 
