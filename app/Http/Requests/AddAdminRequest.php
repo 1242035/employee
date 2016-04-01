@@ -26,8 +26,6 @@ class AddAdminRequest extends Request
         return [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|confirmed|min:6',
-            'password_confirmation' => 'required|min:6'
         ];
     }
 }

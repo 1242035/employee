@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Mail;
 use Session;
 use Hash;
-use Illuminate\Http\Request;
+use App\Mailers\AppMailer;
 use App\Http\Requests\AddAdminRequest;
 use App\User;
 use Validator;
@@ -22,14 +23,20 @@ class UserController extends Controller
         return view('auth.adduser');
     }
 
-    public function postAdduser(AddAdminRequest $request)
+    public function postAdduser(AddAdminRequest $request, AppMailer $mailer)
     {
+        $hashed_random_password = Hash::make(str_random(8));
+
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = Hash::make($request->password);
+        $user->password = $hashed_random_password;
         $user->save();
-        $request->session()->flash('success', 'New Admin Account have been successful added!');
+
+        $mailer->sendEmailConfirmationTo($user);
+
+        $request->session()->flash('success', 'New Admin Account have been successful added! Just one more step: Please check the email and follow the instructions to complete the sign up process');
+
         return redirect('auth/adduser');
     }
 
