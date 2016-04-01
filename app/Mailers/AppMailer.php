@@ -27,6 +27,12 @@ class AppMailer
      *
      * @var string
      */
+    protected $subject;
+    /**
+     * The subject of the email.
+     *
+     * @var string
+     */
     protected $view;
     /**
      * The data associated with the view for the email.
@@ -52,6 +58,7 @@ class AppMailer
     public function sendEmailConfirmationTo(User $user)
     {
         $this->to = $user->email;
+        $this->subject = 'You have been appointed as the administrator of ED website!';
         $this->view = 'emails.reminder';
         $this->data = compact('user');
         $this->deliver();
@@ -64,8 +71,8 @@ class AppMailer
     public function deliver()
     {
         $this->mailer->send($this->view, $this->data, function ($message) {
-            $message->from($this->from, 'Administrator')
-                ->to($this->to);
+            $message->from($this->from, 'ED Administrator')
+                ->to($this->to)->subject($this->subject);;
         });
     }
 }
