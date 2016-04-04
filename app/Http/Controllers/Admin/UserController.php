@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use Mail;
 use Session;
 use Hash;
-use App\Mailers\AppMailer;
 use App\Http\Requests\AddAdminRequest;
 use App\User;
 use Validator;
@@ -23,9 +22,9 @@ class UserController extends Controller
         return view('auth.adduser');
     }
 
-    public function postAdduser(AddAdminRequest $request, AppMailer $mailer)
+    public function postAdduser(AddAdminRequest $request)
     {
-        $random_password = bcrypt(str_random(8));
+        $random_password = str_random(8);
 
         $user = new User();
 
@@ -34,7 +33,17 @@ class UserController extends Controller
         $user->password = $random_password;
         $user->save();
 
-        $mailer->sendEmailConfirmationTo($user);
+        $data = array(
+            'email' => $user->email,
+            'name' => $user->name,
+            'password' => $random_password,
+        );
+
+        Mail::send('emails.reminder', $data, function ($message) use ($user) {
+            $message->from('cam@foobla.com', 'ED Administrator');
+
+            $message->to($user->email)->subject('You have been appointed as the administrator of ED website!');
+        });
 
         $request->session()->flash('success', 'New Admin Account have been successful added! Just one more step: Please check the email and follow the instructions to complete the sign up process');
 
