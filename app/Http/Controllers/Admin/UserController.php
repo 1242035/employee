@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Auth;
 use Mail;
 use Session;
 use Hash;
-use App\Http\Requests\AddAdminRequest;
 use App\User;
 use Validator;
+use App\Http\Requests\AddAdminRequest;
+use App\Http\Requests\ChangePasswordRequest;
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
@@ -50,4 +52,27 @@ class UserController extends Controller
         return redirect('auth/adduser');
     }
 
+    public function getChangePassword()
+    {
+        return view('auth.changepassword');
+    }
+
+    /*
+     * Changing password functionality
+     * @return void
+     */
+
+    public function postChangePassword(ChangePasswordRequest $request)
+    {
+        $user = Auth::user();
+
+        if (!Hash::check($request->input('old_password'), $user->password)) {
+            return redirect()->back()->withErrors('Old Password is incorrect.');
+        } else {
+            $user->password = $request->input('password');
+            $user->save();
+            $request->session()->flash('success', 'Your Password have been changed!');
+            return redirect('change-password');
+        }
+    }
 }

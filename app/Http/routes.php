@@ -22,3 +22,7 @@ get('/auth/logout', 'Auth\AuthController@getLogout');
 // Add new admin routes...
 Route::get('auth/adduser', 'Admin\UserController@getAdduser');
 Route::post('auth/adduser', 'Admin\UserController@postAdduser');
+
+//Change Password
+Route::get('change-password', 'Admin\UserController@getchangePassword');
+Route::post('change-password', 'Admin\UserController@postchangePassword');
