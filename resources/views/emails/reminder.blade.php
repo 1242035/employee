@@ -3,10 +3,14 @@
 You have been appointed as the administrator of our system.
 Now you can use these following information to login: <br/>
 
-<strong>Email: </strong>{{$email}} <br/>
-<strong>Username: </strong>{{$name}} <br/>
-<strong>Init Password: </strong>{{$password}} <br/>
-<em>(Please note that you have to change password on first login.)</em> <br/>
+<strong>Email: </strong>{{$email}}
+<br/>
+<strong>Username: </strong>{{$name}}
+<br/>
+<strong>Init Password: </strong>{{$password}}
+<br/>
+<em>(Please note that you have to change password on first login.)</em>
+<br/>
 
 <br/>
 

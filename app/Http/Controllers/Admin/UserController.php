@@ -54,7 +54,7 @@ class UserController extends Controller
 
     public function getChangePassword()
     {
-        return view('auth.changepassword');
+        return view('auth.change-password');
     }
 
     /*
