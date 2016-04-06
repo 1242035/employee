@@ -70,9 +70,13 @@ class UserController extends Controller
             return redirect()->back()->withErrors('Old Password is incorrect.');
         } else {
             $user->password = $request->input('password');
+            if ($user->first_login == "true") {
+                $user->first_login = "false";
+            }
             $user->save();
             $request->session()->flash('success', 'Your Password have been changed!');
             return redirect('change-password');
         }
+
     }
 }

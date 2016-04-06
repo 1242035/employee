@@ -12,6 +12,10 @@
                         @include('admin.partials.errors')
                         @include('admin.partials.success')
 
+                        @if(Session::has('message'))
+                            <p class="alert alert-warning">{{ Session::get('message') }}</p>
+                        @endif
+
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/change-password') }}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
 
