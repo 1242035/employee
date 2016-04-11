@@ -8300,6 +8300,21 @@ button.close {
   }
 }
 
-h1.blog-title {
-  padding-top: 60px;
+.hero-unit {
+  margin-top: -15px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  color: inherit;
+  background-color: #eee;
+  border-radius: 6px;
+}
+
+.hero-unit img {
+  padding: 20px;
+  max-width: 100%;
+}
+
+.hero-unit .col-md-7 {
+  padding-top: 20px;
 }

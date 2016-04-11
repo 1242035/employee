@@ -20,7 +20,7 @@
 
 {{-- Navigation Bar --}}
 <nav class="navbar navbar-default">
-    <div class="container-fluid">
+    <div class="container">
         <div class="navbar-header">
             <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-menu">
                 <span class="sr-only">Toggle Navigation</span>

@@ -1,12 +1,15 @@
 <?php
-// Blog pages
+// Homepage
 get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
  //Admin area
 get('admin', function () {
     return redirect('/auth/login');
+});
+get('admin/departments', function () {
+    return redirect('/');
 });
 $router->group([
     'namespace' => 'Admin',
@@ -20,9 +23,9 @@ post('/auth/login', 'Auth\AuthController@postLogin');
 get('/auth/logout', 'Auth\AuthController@getLogout');
 
 // Add new admin routes...
-Route::get('auth/adduser', 'Admin\UserController@getAdduser');
-Route::post('auth/adduser', 'Admin\UserController@postAdduser');
+get('auth/adduser', 'Admin\UserController@getAdduser');
+post('auth/adduser', 'Admin\UserController@postAdduser');
 
 //Change Password
-Route::get('change-password', 'Admin\UserController@getchangePassword');
-Route::post('change-password', 'Admin\UserController@postchangePassword');
+get('change-password', 'Admin\UserController@getchangePassword');
+post('change-password', 'Admin\UserController@postchangePassword');
