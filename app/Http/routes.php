@@ -29,3 +29,6 @@ post('auth/adduser', 'Admin\UserController@postAdduser');
 //Change Password
 get('change-password', 'Admin\UserController@getchangePassword');
 post('change-password', 'Admin\UserController@postchangePassword');
+
+//Department Management
+Route::resource('department', 'DepartmentController');
