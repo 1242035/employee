@@ -6,16 +6,11 @@ use App\Department;
 use App\Employee;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Http\Requests\DepartmentRequest;
 use App\Http\Controllers\Controller;
 
 class DepartmentController extends Controller
 {
-    protected $fields = [
-        'name' => '',
-        'office_number' => '',
-        'manager' => '',
-    ];
-
     /**
      * Instantiate a new DepartmentController instance.
      *
@@ -34,6 +29,8 @@ class DepartmentController extends Controller
     {
         $departments = Department::all();
 
+        $departments->load('employees');
+
         return view('departments.index', ['departments' => $departments]);
     }
 
@@ -44,19 +41,9 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        $employees = array();
+        $employees = Employee::all();
 
-        foreach(Employee::all() as $employee) {
-            $employees[$employee->id] = $employees->name;
-        }
-//        $data = [];
-//        foreach ($this->fields as $field => $default) {
-//            $data[$field] = old($field, $default);
-//        }
-
-        return view('departments.create')
-            ->with('department', Department::all())
-            ->with('$employees', $employees);
+        return view('departments.create', compact('employees'));
     }
 
     /**
@@ -65,13 +52,19 @@ class DepartmentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DepartmentRequest $request)
     {
         $department = new Department;
-        $department->name = $request->department_name;
+
+        $department->name = $request->name;
         $department->office_number = $request->office_number;
-        $department->manager = $request->manager;
+        $department->manager = $request->employee;
+
         $department->save();
+
+        $request->session()->flash('success', 'New Department has been created!');
+
+        return redirect('department/create');
     }
 
     /**
@@ -97,15 +90,10 @@ class DepartmentController extends Controller
     {
         $department = Department::findOrFail($id);
 
-        $employees = array();
+        $department->with('employees');
 
-        foreach(Employee::all() as $employee) {
-            $employees[$employee->id] = $employee->name;
-        }
+        return view('departments.edit', compact('department'));
 
-        $e = Employee::find($id);
-
-        return view('departments.edit', compact('department', 'employees', 'e'));
     }
 
     /**
@@ -121,7 +109,6 @@ class DepartmentController extends Controller
         $department->name = $request->name;
         $department->office_number = $request->office_number;
         $department->manager = $request->input('employee');
-        $department->employee_id = Employee::find($request->input('employee'));
         $department->save();
 
         dd($department->employee_id);
