@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Department;
 use App\Employee;
-use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Requests\DepartmentRequest;
 use App\Http\Controllers\Controller;
@@ -48,9 +47,6 @@ class DepartmentController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(DepartmentRequest $request)
     {
@@ -93,7 +89,6 @@ class DepartmentController extends Controller
         $department->with('employees');
 
         return view('departments.edit', compact('department'));
-
     }
 
     /**
@@ -103,17 +98,17 @@ class DepartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(DepartmentRequest $request, $id)
     {
-        $department = Department::find($id);
+        $department = Department::findOrFail($id);
+
         $department->name = $request->name;
         $department->office_number = $request->office_number;
-        $department->manager = $request->input('employee');
+        $department->manager = $request->employee;
         $department->save();
 
-        dd($department->employee_id);
+        return back()->with('success', 'Department updated!');
 
-        return redirect('department/'.$department->id);
     }
 
     /**
@@ -124,6 +119,9 @@ class DepartmentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $department = Department::findOrFail($id);
+        $department->delete();
+
+        return back()->withSuccess("The '$department->name' department has been deleted.");
     }
 }

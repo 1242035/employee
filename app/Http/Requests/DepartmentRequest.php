@@ -42,7 +42,7 @@ class DepartmentRequest extends Request
     {
         return [
             'name' => 'required|max:255',
-            'office_number' => 'required|unique:departments|phone',
+            'office_number' => 'required|phone|max:20',
         ];
     }
 }

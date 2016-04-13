@@ -17,7 +17,7 @@
     <div class="col-md-8">
       <select class="form-control" id="employee" name="employee">
         @foreach ($department->employees as $employee)
-          <option value="{{ $employee->id }}">{{ $employee->name }}</option>
+          <option value="{{ $employee->name}}">{{ $employee->name }}</option>
         @endforeach
       </select>
     </div>
