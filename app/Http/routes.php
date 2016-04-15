@@ -8,9 +8,7 @@ get('/', function () {
 get('admin', function () {
     return redirect('/auth/login');
 });
-get('admin/departments', function () {
-    return redirect('/');
-});
+
 $router->group([
     'namespace' => 'Admin',
     'middleware' => 'auth',
@@ -31,4 +29,4 @@ get('change-password', 'Admin\UserController@getchangePassword');
 post('change-password', 'Admin\UserController@postchangePassword');
 
 //Department Management
-Route::resource('department', 'DepartmentController');
+Route::resource('departments', 'DepartmentController');

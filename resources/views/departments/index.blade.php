@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <a href="/department/create"><button class="btn btn-success">New Department</button></a>
+            <a href="/departments/create"><button class="btn btn-success">New Department</button></a>
         </div>
     </div>
     <hr/>
@@ -20,20 +20,22 @@
                 <td></td>
                 </thead>
                 <tbody>
-                @foreach ($departments as $department)
-                    <tr>
-                        <td><a href="{{url('department/'.$department->id)}}" >{{$department->name}}</a></td>
-                        <td>{{$department->office_number}}</td>
-                        <td>{{$department->manager}}</td>
-                        <td>
-                            <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#modal-delete">
-                                <i class="fa fa-times-circle"></i>
-                                Delete
-                            </button>
-                            <a href="/department/{{$department->id}}/edit"><button class="btn btn-success">Edit</button></a>
-                        </td>
-                    </tr>
-                @endforeach
+                    @if(isset($departments))
+                        @foreach ($departments as $department)
+                            <tr>
+                                <td><a href="{{url('departments/'.$department->id)}}" >{{$department->name}}</a></td>
+                                <td>{{$department->office_number}}</td>
+                                <td>{{$department->manager}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#modal-delete">
+                                        <i class="fa fa-times-circle"></i>
+                                        Delete
+                                    </button>
+                                    <a href="/departments/{{$department->id}}/edit"><button class="btn btn-success">Edit</button></a>
+                                </td>
+                            </tr>
+                        @endforeach
+                    @endif
                 </tbody>
             </table>
         </div>
@@ -57,7 +59,7 @@
                 </p>
             </div>
             <div class="modal-footer">
-                <form method="POST" action="/department/{{ $department->id }}">
+                <form method="POST" action="/departments/{{ $department->id or '' }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="hidden" name="_method" value="DELETE">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

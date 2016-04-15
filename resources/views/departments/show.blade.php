@@ -25,7 +25,7 @@
             </table>
         </div>
     </div>
-    <a href="/department/"><button class="btn btn-success">Back</button></a>
+    <a href="/departments/"><button class="btn btn-success">Back</button></a>
 </div>
 
 @stop

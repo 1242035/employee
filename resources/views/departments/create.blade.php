@@ -20,7 +20,7 @@
             @include('admin.partials.success')
 
             <form class="form-horizontal" role="form" method="POST"
-                  action="/department">
+                  action="/departments">
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
               <div class="form-group">

@@ -12,7 +12,7 @@
                         @include('admin.partials.errors')
                         @include('admin.partials.success')
 
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/department/'.$department->id) }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/departments/'.$department->id) }}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
                             <input type="hidden" name="_method" value="PUT">
 

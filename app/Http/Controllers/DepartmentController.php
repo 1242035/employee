@@ -28,8 +28,6 @@ class DepartmentController extends Controller
     {
         $departments = Department::all();
 
-        $departments->load('employees');
-
         return view('departments.index', ['departments' => $departments]);
     }
 
@@ -60,7 +58,8 @@ class DepartmentController extends Controller
 
         $request->session()->flash('success', 'New Department has been created!');
 
-        return redirect('department/create');
+        return redirect('departments');
+
     }
 
     /**
