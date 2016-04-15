@@ -1,10 +1,10 @@
 <ul class="nav navbar-nav">
-    <li class="active"><a href="/">Home</a></li>
-    @if (Auth::check())
-        <li @if (Request::is('admin/Department*')) class="active" @endif>
-            <a href="/admin/departments">Departments</a>
-        </li>
-    @endif
+    <li @if (Request::is('/departments/*')) class="active" @endif>
+        <a href="/departments">Departments</a>
+    </li>
+    <li @if (Request::is('employees*')) class="active" @endif>
+        <a href="/employees">Employees</a>
+    </li>
 </ul>
 <ul class="nav navbar-nav navbar-right">
   @if (Auth::guest())

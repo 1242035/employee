@@ -3,12 +3,15 @@
 @section('content')
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <a href="/departments/create"><button class="btn btn-success">New Department</button></a>
+    @if (Auth::check())
+        <div class="row">
+            <div class="col-md-6">
+                <a href="/departments/create"><button class="btn btn-success">New Department</button></a>
+            </div>
         </div>
-    </div>
-    <hr/>
+        <hr/>
+    @endif
+
     <h2>Departments</h2>
     <div class="row">
         <div class="col-md-12">
@@ -27,11 +30,13 @@
                                 <td>{{$department->office_number}}</td>
                                 <td>{{$department->manager}}</td>
                                 <td>
-                                    <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#modal-delete">
-                                        <i class="fa fa-times-circle"></i>
-                                        Delete
-                                    </button>
-                                    <a href="/departments/{{$department->id}}/edit"><button class="btn btn-success">Edit</button></a>
+                                    @if (Auth::check())
+                                        <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#modal-delete">
+                                            <i class="fa fa-times-circle"></i>
+                                            Delete
+                                        </button>
+                                        <a href="/departments/{{$department->id}}/edit"><button class="btn btn-success">Edit</button></a>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach
