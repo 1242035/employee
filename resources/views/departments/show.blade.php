@@ -13,6 +13,9 @@
                 <td><strong>Name</strong></td>
                 <td><strong>Office Number</strong></td>
                 <td><strong>Manager</strong></td>
+                @if (Auth::check())
+                    <td><strong>Action</strong></td>
+                @endif
                 <td></td>
                 </thead>
                 <tbody>
@@ -20,6 +23,11 @@
                         <td>{{$department->name}}</td>
                         <td>{{$department->office_number}}</td>
                         <td>{{$department->manager}}</td>
+                        <td>
+                            @if (Auth::check())
+                                <a href="/departments/{{$department->id}}/employees"><button class="btn btn-success">View Employees</button></a>
+                            @endif
+                        </td>
                     </tr>
                 </tbody>
             </table>

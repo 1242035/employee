@@ -30,3 +30,7 @@ post('change-password', 'Admin\UserController@postchangePassword');
 
 //Department Management
 Route::resource('departments', 'DepartmentController');
+Route::get('departments/{id}/employees', 'DepartmentController@showEmployees');
+
+//Department Management
+Route::resource('employees', 'EmployeeController');

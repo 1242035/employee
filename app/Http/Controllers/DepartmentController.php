@@ -123,4 +123,19 @@ class DepartmentController extends Controller
 
         return back()->withSuccess("The '$department->name' department has been deleted.");
     }
+
+    /**
+     * View employees in a department
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showEmployees($id)
+    {
+        $department = Department::findOrFail($id);
+
+        $department->with('employees');
+
+        return view('departments.show-employees', compact('department'));
+    }
 }

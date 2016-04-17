@@ -6,44 +6,31 @@
     @if (Auth::check())
         <div class="row">
             <div class="col-md-6">
-                <a href="/departments/create"><button class="btn btn-success">New Department</button></a>
+                <a href="/employees/create"><button class="btn btn-success">Add Employee</button></a>
             </div>
         </div>
         <hr/>
     @endif
 
-    <h2>Departments</h2>
+    @include('employees.partials.search')
+
+    @yield('title')
+
     <div class="row">
         <div class="col-md-12">
             <table class="table table-striped">
                 <thead>
                 <td><strong>Name</strong></td>
-                <td><strong>Office Number</strong></td>
-                <td><strong>Manager</strong></td>
+                <td><strong>Department</strong></td>
+                <td><strong>Job title</strong></td>
+                <td><strong>Email</strong></td>
                 @if (Auth::check())
                     <td><strong>Action</strong></td>
                 @endif
                 <td></td>
                 </thead>
                 <tbody>
-                    @if(isset($departments))
-                        @foreach ($departments as $department)
-                            <tr>
-                                <td><a href="{{url('departments/'.$department->id)}}" >{{$department->name}}</a></td>
-                                <td>{{$department->office_number}}</td>
-                                <td>{{$department->manager}}</td>
-                                <td>
-                                    @if (Auth::check())
-                                        <a href="/departments/{{$department->id}}/edit"><button class="btn btn-success">Edit</button></a>
-                                        <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#modal-delete">
-                                            <i class="fa fa-times-circle"></i>
-                                            Delete
-                                        </button>
-                                    @endif
-                                </td>
-                            </tr>
-                        @endforeach
-                    @endif
+                    @yield('data')
                 </tbody>
             </table>
         </div>
@@ -63,11 +50,11 @@
             <div class="modal-body">
                 <p class="lead">
                     <i class="fa fa-question-circle fa-lg"></i> &nbsp;
-                    Are you sure you want to delete this department?
+                    Are you sure you want to delete this employee?
                 </p>
             </div>
             <div class="modal-footer">
-                <form method="POST" action="/departments/{{ $department->id or '' }}">
+                <form method="POST" action="/employees/{{ $employee->id or '' }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="hidden" name="_method" value="DELETE">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
