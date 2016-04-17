@@ -1,5 +1,5 @@
 <ul class="nav navbar-nav">
-    <li @if (Request::is('/departments/*')) class="active" @endif>
+    <li @if (Request::is('departments*')) class="active" @endif>
         <a href="/departments">Departments</a>
     </li>
     <li @if (Request::is('employees*')) class="active" @endif>
