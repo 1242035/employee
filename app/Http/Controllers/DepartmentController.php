@@ -85,9 +85,11 @@ class DepartmentController extends Controller
     {
         $department = Department::findOrFail($id);
 
-        $department->with('employees');
+        $employees = Employee::all();
 
-        return view('departments.edit', compact('department'));
+//        $department->with('employees');
+
+        return view('departments.edit', compact('department', 'employees'));
     }
 
     /**

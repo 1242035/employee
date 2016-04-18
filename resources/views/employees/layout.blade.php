@@ -22,7 +22,7 @@
                 <thead>
                 <td><strong>Name</strong></td>
                 <td><strong>Department</strong></td>
-                <td><strong>Job title</strong></td>
+                <td><strong>Job Title</strong></td>
                 <td><strong>Email</strong></td>
                 @if (Auth::check())
                     <td><strong>Action</strong></td>
