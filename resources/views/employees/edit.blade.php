@@ -21,6 +21,7 @@
 
                         <form class="form-horizontal" enctype="multipart/form-data" role="form" method="POST" action="{{ url('/employees/'.$employee->id) }}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="_method" value="PUT">
 
                             @include('employees._form', ['buttonText' => 'Update Employee'])
 

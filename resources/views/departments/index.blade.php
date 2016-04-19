@@ -39,6 +39,7 @@
                                             <i class="fa fa-times-circle"></i>
                                             Delete
                                         </button>
+                                        <a href="/departments/{{$department->id}}/employees"><button class="btn btn-success">View Employees</button></a>
                                     @endif
                                 </td>
                             </tr>

@@ -52,7 +52,7 @@
 
 
     <div class="col-sm-5">
-        <img src="/{{ $employee->photo or 'images/avatar.png'}}" id="avatar" class="img-responsive" alt="Employee Photo">
+        <img src="/{{ ($employee->photo != '' ? $employee->photo : 'images/avatar.png') }}" id="avatar" class="img-responsive" alt="Employee Photo">
         <div class="form-group">
             <label for="photo" class="control-label"></label>
             <input type="file" id ="photo" class="form-control" name="photo" onchange="readURL(this);" />

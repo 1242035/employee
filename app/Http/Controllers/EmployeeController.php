@@ -7,6 +7,7 @@ use App\Employee;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateEmployeeRequest;
+use App\Http\Requests\EditEmployeeRequest;
 use App\Http\Controllers\Controller;
 
 class EmployeeController extends Controller
@@ -110,9 +111,28 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EditEmployeeRequest $request, $id)
     {
-        //
+        $employee = Employee::findOrFail($id);
+
+        $employee->department_id = $request->department;
+        $employee->name = $request->name;
+        $employee->job_title = $request->job_title;
+        $employee->cellphone = $request->cellphone;
+        $employee->email = $request->email;
+
+        if ($request->hasFile('photo')) {
+            $photo = $request->file('photo');
+            $filename = str_slug($employee->name). '-' . $photo->getClientOriginalName();
+            $request->file('photo')->move(base_path() . '/public/images/avatar/', $filename);
+            $employee->photo = 'images/avatar/'.$filename;
+        }
+
+        $employee->save();
+
+        $request->session()->flash('success', 'The employee has been updated!');
+
+        return redirect('employees');
     }
 
     /**
