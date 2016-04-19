@@ -22,7 +22,7 @@
                         <form class="form-horizontal" enctype="multipart/form-data" role="form" method="POST" action="{{ url('/employees') }}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                            @include('employees._form')
+                            @include('employees._form', ['avatar' => 'images/avatar.png'])
 
                         </form>
                     </div>

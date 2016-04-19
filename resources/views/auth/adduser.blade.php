@@ -31,7 +31,7 @@
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button class="btn btn-primary" type="submit">Add Admin</button>
+                                    <button class="btn btn-primary" type="submit"><i class="fa fa-plus-square"></i> Add Admin</button>
                                 </div>
                             </div>
 

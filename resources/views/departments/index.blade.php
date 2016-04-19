@@ -6,7 +6,7 @@
     @if (Auth::check())
         <div class="row">
             <div class="col-md-6">
-                <a href="/departments/create"><button class="btn btn-success">New Department</button></a>
+                <a href='/departments/create'><button class="btn btn-success"><i class="fa fa-plus-square"></i> New Department</button></a>
             </div>
         </div>
         <hr/>
@@ -34,12 +34,16 @@
                                 <td>{{$department->manager}}</td>
                                 <td>
                                     @if (Auth::check())
-                                        <a href="/departments/{{$department->id}}/edit"><button class="btn btn-success">Edit</button></a>
+                                        <a href="/departments/{{$department->id}}/edit">
+                                            <button class="btn btn-success"><i class="fa fa-pencil-square"></i> Edit</button>
+                                        </a>
                                         <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#modal-delete">
                                             <i class="fa fa-times-circle"></i>
                                             Delete
                                         </button>
-                                        <a href="/departments/{{$department->id}}/employees"><button class="btn btn-success">View Employees</button></a>
+                                        <a href="/departments/{{$department->id}}/employees">
+                                            <button class="btn btn-primary"><i class="fa fa-eye"></i> View Employees</button>
+                                        </a>
                                     @endif
                                 </td>
                             </tr>

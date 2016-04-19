@@ -42,7 +42,7 @@
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button class="btn btn-primary" type="submit">Change Your Password</button>
+                                    <button class="btn btn-primary" type="submit"><i class="fa fa-pencil-square"></i> Change Your Password</button>
                                 </div>
                             </div>
 

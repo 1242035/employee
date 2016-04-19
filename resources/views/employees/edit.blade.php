@@ -23,7 +23,7 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="_method" value="PUT">
 
-                            @include('employees._form', ['buttonText' => 'Update Employee'])
+                            @include('employees._form', ['buttonText' => 'Update Employee', 'icon' => 'fa fa-pencil-square'])
 
                         </form>
 

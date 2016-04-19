@@ -40,7 +40,7 @@
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button class="btn btn-primary" type="submit">Login</button>
+                                    <button class="btn btn-primary" type="submit"><i class="fa fa-sign-in"></i> Login</button>
                                 </div>
                             </div>
 

@@ -8,6 +8,7 @@
 
     {{-- Styles --}}
       <link href="/css/app.css" rel="stylesheet">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
       @yield('styles')
 
       {{-- HTML5 Shim and Respond.js for IE8 support --}}

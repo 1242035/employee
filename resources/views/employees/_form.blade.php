@@ -42,7 +42,7 @@
         <div class="form-group">
             <div class="col-md-6 col-md-offset-4">
                 <button type="submit" class="btn btn-primary btn-md">
-                    <i class="fa fa-plus-circle"></i>
+                    <i class="{{ $icon or 'fa fa-plus-circle' }}"></i>
                     &nbsp; {{ $buttonText or 'Add New Employee' }}
                 </button>
             </div>
@@ -50,9 +50,8 @@
 
     </div>
 
-
     <div class="col-sm-5">
-        <img src="/{{ ($employee->photo != '' ? $employee->photo : 'images/avatar.png') }}" id="avatar" class="img-responsive" alt="Employee Photo">
+        <img src="/{{ $avatar or ($employee->photo != '' ? $employee->photo : 'images/avatar.png')}}" id="avatar" class="img-responsive" alt="Employee Photo">
         <div class="form-group">
             <label for="photo" class="control-label"></label>
             <input type="file" id ="photo" class="form-control" name="photo" onchange="readURL(this);" />

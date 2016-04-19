@@ -6,7 +6,7 @@
     @if (Auth::check())
         <div class="row">
             <div class="col-md-6">
-                <a href="/employees/create"><button class="btn btn-success">Add Employee</button></a>
+                <a href="/employees/create"><button class="btn btn-success"><i class="fa fa-plus-square"></i> Add Employee</button></a>
             </div>
         </div>
         <hr/>
