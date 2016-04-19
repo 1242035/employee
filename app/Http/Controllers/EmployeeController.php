@@ -27,9 +27,10 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employees = Employee::all();
+        $employees = Employee::orderBy('updated_at', 'desc')
+            ->with('department')->get();
 
-        $employees->load('department');
+//        $employees->load('department');
 
         return view('employees.index', ['employees' => $employees]);
     }
@@ -66,7 +67,7 @@ class EmployeeController extends Controller
             $photo = $request->file('photo');
             $filename = str_slug($employee->name). '-' . $photo->getClientOriginalName();
             $request->file('photo')->move(base_path() . '/public/images/avatar/', $filename);
-            $employee->photo = 'img/avatar/'.$filename;
+            $employee->photo = 'images/avatar/'.$filename;
         }
 
         $employee->save();
@@ -95,7 +96,11 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $employee = Employee::findOrFail($id);
+
+        $departments = Department::all();
+
+        return view('employees.edit', compact('employee', 'departments'));
     }
 
     /**
