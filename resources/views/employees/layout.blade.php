@@ -12,8 +12,6 @@
         <hr/>
     @endif
 
-    @include('employees.partials.search')
-
     @yield('title')
 
     <div class="row">

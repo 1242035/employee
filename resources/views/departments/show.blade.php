@@ -25,7 +25,7 @@
                         <td>{{$department->manager}}</td>
                         <td>
                             @if (Auth::check())
-                                <a href="/departments/{{$department->id}}/employees"><button class="btn btn-success"><i class="fa fa-eye"></i> View Employees</button></a>
+                                <a href="/departments/{{$department->id}}/employees"><button class="btn btn-primary"><i class="fa fa-eye"></i> View Employees</button></a>
                             @endif
                         </td>
                     </tr>
