@@ -17,7 +17,7 @@
                 <tbody>
                     <tr>
                         <td>Department:</td>
-                        <td><i class="fa fa-home"></i> {{ $employee->department->name }}</td>
+                        <td><i class="fa fa-home"></i> {{ $employee->department->name or ''}}</td>
                     </tr>
                     <tr>
                         <td>Cell Phone:</td>

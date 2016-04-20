@@ -22,25 +22,24 @@
 
             <div class="row">
                 <div class="col-md-4">
-                    <h2>Try It</h2>
+                    <h2>Author Information</h2>
 
-                    <p>Enter a few characters in the Search Box in the upper right corner of the screen, and select an employee. In
-                        the Employee view, you can navigate up and down the Org Chart by clicking either the Manager link,
-                        or one of the Direct Reports in the sidebar on the right of the screen.</p>
-
-                    <p><a class="btn btn-default" href="#">Show Me »</a></p>
+                    <p>Name: Hoang Manh Cam</p>
+                    <p>Student ID: 13020523</p>
+                    <p>Email: cam@foobla.com</p>
+                    <a href="http://facebook.com/saddest.of.sunday"><button class="btn btn-default"><i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook »</button></a>
                 </div>
                 <div class="col-md-4">
                     <h2>Get the Code</h2>
 
-                    <p>The source code for this application is maintained in <a href="https://github.com/ccoenraets/backbone-directory">this GitHub repository</a>. The repository includes several adapters to use the application with different data persistence solutions: in-memory store, REST API, REST with JSONP, Node.js, MongoDB, etc.</p>
+                    <p>The source code for this application is maintained in <a href="https://github.com/HoangLaravel/employee">this GitHub repository</a>. You can also find the Instructions for Downloading and Installing there. And any Issues and Pull Requests are greatly appreciated</p>
 
-                    <p><a class="btn btn-default" href="#">Download »</a></p>
+                    <p><a class="btn btn-default" href="https://github.com/HoangLaravel/employee">Download »</a></p>
                 </div>
                 <div class="col-md-4">
-                    <h2>Get More</h2>
-                    <p>The Employee Directory use case is simple enough to be easily understandable. It's also not entirely trivial and provides a good playground to test frameworks in a real-life context. Other versions of the application built with other frameworks are available on the author's blog.</p><p>
-                    </p><p><a class="btn btn-default" href="#">Visit the Blog</a></p>
+                    <h2>App Info</h2>
+                    <p>The Employee Directory use case is simple enough to be easily understandable. This app take very much effort to complete. So I hope I like it. If there are any errors during execution, please send me a message! Thanks!<p>
+                    </p><p><a class="btn btn-default" href="#">Cheer! »</a></p>
                 </div>
             </div>
         </div>

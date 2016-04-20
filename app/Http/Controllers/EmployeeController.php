@@ -74,7 +74,7 @@ class EmployeeController extends Controller
 
         $request->session()->flash('success', 'New Employee has been created!');
 
-        return redirect('employees');
+        return back();
     }
 
     /**
@@ -133,7 +133,7 @@ class EmployeeController extends Controller
 
         $request->session()->flash('success', 'The employee has been updated!');
 
-        return redirect('employees');
+        return back();
     }
 
     /**
