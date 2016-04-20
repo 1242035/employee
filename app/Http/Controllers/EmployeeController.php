@@ -28,8 +28,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employees = Employee::orderBy('updated_at', 'desc')
-            ->with('department')->get();
+        $employees = Employee::all();
 
 //        $employees->load('department');
 
@@ -86,7 +85,9 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
-        //
+        $employee = Employee::find($id);
+
+        return view('employees.show')->with('employee', $employee);
     }
 
     /**
@@ -143,6 +144,9 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $employee = Employee::findOrFail($id);
+        $employee->delete();
+
+        return back()->withSuccess("The '$employee->name' employee has been deleted.");
     }
 }
