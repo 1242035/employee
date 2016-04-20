@@ -20,10 +20,18 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Post::class, function ($faker) {
+$factory->define(App\Department::class, function ($faker) {
     return [
-        'title' => $faker->sentence(mt_rand(3, 10)),
-        'content' => join("\n\n", $faker->paragraphs(mt_rand(3, 6))),
-        'published_at' => $faker->dateTimeBetween('-1 month', '+3 days'),
+        'name' => $faker->name,
+        'office_number' => $faker->numberBetween($min = 1000000, $max = 9999999999),
+    ];
+});
+
+$factory->define(App\Employee::class, function ($faker) use ($factory) {
+    return [
+        'department_id' => $factory->create('App\Department')->id,
+        'name' => $faker->name,
+        'cellphone' => $faker->numberBetween($min = 1000000, $max = 9999999999),
+        'email' => $faker->email,
     ];
 });

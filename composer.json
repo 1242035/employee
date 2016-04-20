@@ -21,7 +21,11 @@
         ],
         "psr-4": {
             "App\\": "app/"
-        }
+        },
+        "files": [
+            "database/seeds/DepartmentTableSeeder.php",
+            "database/seeds/EmployeeTableSeeder.php"
+        ]
     },
     "autoload-dev": {
         "classmap": [
