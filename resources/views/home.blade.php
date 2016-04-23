@@ -39,7 +39,7 @@
                 <div class="col-md-4">
                     <h2>App Info</h2>
                     <p>The Employee Directory use case is simple enough to be easily understandable. This app take very much effort to complete. So I hope I like it. If there are any errors during execution, please send me a message! Thanks!<p>
-                    </p><p><a class="btn btn-default" href="#"><i class="fa fa-info-circle"></i> More Info »</a></p>
+                    </p><p><a class="btn btn-default" href="https://github.com/HoangLaravel/employee"><i class="fa fa-info-circle"></i> More Info »</a></p>
                 </div>
             </div>
         </div>
