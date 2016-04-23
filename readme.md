@@ -14,8 +14,6 @@ Employee Directory is a sample app that demonstrates how to build modern web app
 * `php artisan vendor:publish` to publish filemanager
 * `php artisan serve` to start the app on http://localhost:8000/
 
-In the IDE, start Laravel 5 Example via `Run > Start Laravel 5 Example` and access your site via `Preview > 8000`.
-
 ### Include ###
 
 * [Bootstrap SASS](http://getbootstrap.com) for CSS and jQuery plugins
@@ -27,24 +25,8 @@ In the IDE, start Laravel 5 Example via `Run > Start Laravel 5 Example` and acce
 * Home page
 * Custom Error Page 404
 * Authentication (login, logout, change-password, add administrator, mail confirmation)
-* Department management
-  ** Add department
-  ** List departments
-  ** View department detail
-  ** View employees in a department
-  ** Edit department
-  ** Delete department
-* Employee management
-  ** Add employee
-  ** View employee profile
-  ** Search for employee
-  ** Edit employee
-  ** Delete employee
-
-### Packages included ###
-
-*
-*
+* Department management( Add department, List departments, View department detail, View employees in a department, Edit department,Delete department).
+* Employee management ( Add employee, View employee profile, Search for employee, Edit employee, Delete employee).
 
 ### Tricks ###
 
