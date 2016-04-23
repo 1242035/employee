@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
+        $this->call('UserTableSeeder');
         $this->call('DepartmentTableSeeder');
         $this->call('EmployeeTableSeeder');
 
@@ -21,3 +22,17 @@ class DatabaseSeeder extends Seeder
     }
 }
 
+class UserTableSeeder extends Seeder
+{
+
+    public function run()
+    {
+        DB::table('users')->insert([
+            'name'   => 'Admin',
+            'email'      => 'cam@foobla.com',
+            'password'   => '123456',
+            'created_at' => new DateTime(),
+            'updated_at' => new DateTime()
+        ]);
+    }
+}
