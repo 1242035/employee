@@ -28,6 +28,9 @@ post('auth/adduser', 'Admin\UserController@postAdduser');
 get('change-password', 'Admin\UserController@getchangePassword');
 post('change-password', 'Admin\UserController@postchangePassword');
 
+//Search Employees
+Route::get('employees/search', 'SearchController@index');
+
 //Department Management
 Route::resource('departments', 'DepartmentController');
 Route::get('departments/{id}/employees', 'DepartmentController@showEmployees');

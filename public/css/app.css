@@ -8318,3 +8318,11 @@ button.close {
 .hero-unit .col-md-7 {
   padding-top: 20px;
 }
+
+input#keyword {
+  border: 1px solid transparent;
+  border-color: #ccc;
+  border-radius: 4px;
+  height: 33px;
+  padding: 10px;
+}

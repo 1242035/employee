@@ -7,6 +7,14 @@
     </li>
 </ul>
 <ul class="nav navbar-nav navbar-right">
+
+  <li>
+     <form method="GET" action="{{ url('employees/search') }}" style="margin-top: 7px;">
+       <input id="keyword" placeholder="Search employees" name="keyword" type="text" value="">
+       <input class="btn btn-default" type="submit" value="Search">
+     </form>
+ </li>
+
   @if (Auth::guest())
     <li><a href="/auth/login">Login</a></li>
   @else

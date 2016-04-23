@@ -1,7 +1,7 @@
 @extends('employees.layout')
 
 @section('title')
-    <h2>Employees</h2>
+    <h2>Employees</h2> @if(isset($keyword))<h2><small>&raquo; Search Results for <strong>"{{ $keyword }}"</strong></small></h2>@endif
 @stop
 
 @section('data')
