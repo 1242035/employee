@@ -1,6 +1,6 @@
 ##Employee Directory ##
 
-**Employee Directory is a sample app that demonstrates how to build modern web applications using different frameworks. This version is built with Laravel and Twitter Bootstrap.
+**Employee Directory **is a sample app that demonstrates how to build modern web applications using different frameworks. This version is built with Laravel and Twitter Bootstrap.
 
 ### Installation ###
 
