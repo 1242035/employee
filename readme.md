@@ -1,6 +1,6 @@
-## Laravel 5 example ##
+##Employee Directory ##
 
-**Laravel 5 example** is a tutorial application (in french [there](http://laravel.sl-creation.org/)).
+**Employee Directory is a sample app that demonstrates how to build modern web applications using different frameworks. This version is built with Laravel and Twitter Bootstrap.
 
 ### Installation ###
 
