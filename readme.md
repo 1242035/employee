@@ -7,8 +7,8 @@ Employee Directory is a sample app that demonstrates how to build modern web app
 * `git clone https://github.com/HoangLaravel/employee projectname`
 * `cd projectname`
 * `composer install`
-* `php artisan key:generate`
 * Create a database and inform *.env*
+* `php artisan key:generate`
 * `php artisan migrate --seed` to create and populate tables
 * Inform *config/mail.php* for email sends
 * `php artisan vendor:publish` to publish filemanager
