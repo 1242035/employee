@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         $this->call('UserTableSeeder');
-        $this->call('DepartmentTableSeeder');
+//        $this->call('DepartmentTableSeeder');
         $this->call('EmployeeTableSeeder');
 
         Model::reguard();
@@ -27,6 +27,8 @@ class UserTableSeeder extends Seeder
 
     public function run()
     {
+        DB::table('users')->truncate();
+
         DB::table('users')->insert([
             'name'   => 'Admin',
             'email'      => 'cam@foobla.com',

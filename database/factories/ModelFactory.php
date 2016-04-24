@@ -22,7 +22,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Department::class, function ($faker) {
     return [
-        'name' => $faker->name,
+        'name' => $faker->company,
         'office_number' => $faker->numberBetween($min = 1000000, $max = 9999999999),
     ];
 });

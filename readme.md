@@ -24,6 +24,7 @@ Employee Directory is a sample app that demonstrates how to build modern web app
 
 * Home page
 * Custom Error Page 404
+* Pagination
 * Authentication (login, logout, change-password, add administrator, mail confirmation)
 * Department management( Add department, List departments, View department detail, View employees in a department, Edit department,Delete department).
 * Employee management ( Add employee, View employee profile, Search for employee, Edit employee, Delete employee).
