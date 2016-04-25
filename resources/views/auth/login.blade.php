@@ -40,6 +40,12 @@
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
+                                    <p><strong>Default Acc:</strong> cam@foobla.com / <strong>Pass:</strong> 123456</p>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
                                     <button class="btn btn-primary" type="submit"><i class="fa fa-sign-in"></i> Login</button>
                                 </div>
                             </div>

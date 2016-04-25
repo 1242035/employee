@@ -9,12 +9,6 @@ get('admin', function () {
     return redirect('/auth/login');
 });
 
-$router->group([
-    'namespace' => 'Admin',
-    'middleware' => 'auth',
-], function () {
-
-});
 // Logging in and out
 get('/auth/login', 'Auth\AuthController@getLogin');
 post('/auth/login', 'Auth\AuthController@postLogin');
