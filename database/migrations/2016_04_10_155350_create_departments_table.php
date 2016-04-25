@@ -16,7 +16,7 @@ class CreateDepartmentsTable extends Migration
             $table->increments('id');
             $table->string('name', 100);
             $table->text('office_number');
-            $table->string('manager');
+            $table->string('manager')->nullable();
             $table->timestamps();
         });
     }

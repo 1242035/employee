@@ -58,7 +58,7 @@ class DepartmentController extends Controller
 
         $request->session()->flash('success', 'New Department has been created!');
 
-        return redirect('departments');
+        return back();
 
     }
 

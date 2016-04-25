@@ -16,6 +16,7 @@
     <label for="employee" class="col-md-3 control-label">Manager</label>
     <div class="col-md-8">
       <select class="form-control" id="employee" name="employee">
+        <option></option>
         @foreach ($employees as $employee)
           <option value="{{ $employee->name}}">{{ $employee->name }}</option>
         @endforeach
