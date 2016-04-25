@@ -14,7 +14,7 @@
 
                     <div class="col-md-7">
                         <h2>Welcome to Employee Directory</h2>
-                        <p>Employee Directory is a sample app that demonstrates how to build modern web applications using different frameworks. This version is built with <a href="http://laravel.com">Laravel</a> and
+                        <p>Employee Directory is a sample app that demonstrates how to build modern web applications using different frameworks. This version is built with <a href="http://laravel.com">Laravel 5.1</a> and
                         <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
                     </div>
                 </div>
