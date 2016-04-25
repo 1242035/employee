@@ -33,6 +33,7 @@ class UserTableSeeder extends Seeder
             'name'   => 'Admin',
             'email'      => 'cam@foobla.com',
             'password'   => bcrypt('123456'),
+			'first_login' => 'false',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime()
         ]);
