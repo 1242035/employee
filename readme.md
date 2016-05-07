@@ -2,6 +2,11 @@
 
 Employee Directory is a sample app that demonstrates how to build modern web applications using different frameworks. This version is built with Laravel 5.1 and Twitter Bootstrap.
 
+### References ###
+
+* You can test the example application at http://employees-hoanglaravel.c9users.io/
+* Administrator: email = cam@foobla.com, password = 123456
+
 ### Installation ###
 
 * `git clone https://github.com/HoangLaravel/employee projectname`
