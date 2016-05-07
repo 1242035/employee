@@ -14,7 +14,7 @@ Now you can use these following information to login: <br/>
 
 <br/>
 
-Thank you! Please log in at http://employees-hoanglaravel.c9users.io/auth/login.
+Thank you! Please log in at localhost:8000/auth/login.
 If you have any questions, please let me know! <br/>
 
 <br/>
