@@ -20,9 +20,7 @@
                 <td><strong>Name</strong></td>
                 <td><strong>Office Number</strong></td>
                 <td><strong>Manager</strong></td>
-                @if (Auth::check())
-                    <td><strong>Action</strong></td>
-                @endif
+                <td><strong>Action</strong></td>
                 <td></td>
                 </thead>
                 <tbody>
@@ -41,10 +39,10 @@
                                             <i class="fa fa-times-circle"></i>
                                             Delete
                                         </button>
-                                        <a href="/departments/{{$department->id}}/employees">
-                                            <button class="btn btn-primary"><i class="fa fa-eye"></i> View Employees</button>
-                                        </a>
                                     @endif
+                                    <a href="/departments/{{$department->id}}/employees">
+                                        <button class="btn btn-primary"><i class="fa fa-eye"></i> View Employees</button>
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach

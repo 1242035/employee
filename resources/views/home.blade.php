@@ -27,7 +27,7 @@
                     <p>Name: Hoang Manh Cam</p>
                     <p>Student ID: 13020523</p>
                     <p>Email: cam@foobla.com</p>
-                    <a href="http://facebook.com/saddest.of.sunday"><button class="btn btn-default"><i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook »</button></a>
+                    <p><a class="btn btn-default" href="http://facebook.com/saddest.of.sunday"><i class="fa fa-facebook"></i> Facebook »</a></p>
                 </div>
                 <div class="col-md-4">
                     <h2>Get the Code</h2>
