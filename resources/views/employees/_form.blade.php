@@ -11,8 +11,11 @@
             <label for="department" class="col-lg-3 control-label">Department</label>
             <div class="col-lg-8">
                 <select class="form-control" id="department" name="department">
+                    @if(isset($employee))
+                        <option value="{{ $employee->department->id }}">{{ $employee->department->name }}</option>
+                    @endif
                     @foreach ($departments as $department)
-                        <option selected="{{ $employee->department or '' }}" value="{{ $department->id }}">{{ $department->name }}</option>
+                        <option value="{{ $department->id }}">{{ $department->name }}</option>
                     @endforeach
                 </select>
             </div>
