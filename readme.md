@@ -32,3 +32,9 @@ Employee Directory is a sample app that demonstrates how to build modern web app
 To test application the database is seeding with users :
 
 * Administrator : email = cam@foobla.com, password = 123456
+* 
+### Learning Laravel ###
+
+* Here is some useful link from my blog: Tự học lập trình Laravel Framework
+* [Học Laravel 5.2 qua việc xây dựng ứng dụng hoàn chỉnh từ A đến Z](http://laravel-php.com/series/build-web-app-laravel-5-va-angularjs/) 
+* [XÂY DỰNG ỨNG DỤNG WEB VỚI LARAVEL 5 VÀ ANGULARJS](http://laravel-php.com/series/hoc-laravel-5-2-xay-dung-ung-dung-hoan-chinh/) 
